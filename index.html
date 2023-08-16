@@ -1,7 +1,95 @@
+
+
+
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Mon Aug 10 2015 21:43:56 GMT+0000 (UTC) -->
 <html>
-<h1>Test<h1/>
-  <div>
-    <label>Iframe</label>
-    <iframe src="https://localhost:3000">
-  </div>
+<head>
+  <meta charset="utf-8">
+  <title>Nequi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <script type="text/javascript" src="/bdigital/ruxitagentjs_ICA2NVfqru_10271230629152232.js" data-dtconfig="app=8cf72b5a35a9f4d5|cuc=k6ulailr|mel=100000|featureHash=ICA2NVfqru|dpvc=1|ssv=4|lastModification=1691497878007|vcv=2|tp=500,50,0,1|rdnt=1|uxrgce=1|bp=3|agentUri=/bdigital/ruxitagentjs_ICA2NVfqru_10271230629152232.js|reportUrl=/bdigital/rb_bf48591pze|rid=RID_-1619468439|rpid=603941750|domain=nequi.com"></script><link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/nequi_two.webflow.css">
+  <link rel="stylesheet" type="text/css" href="css/nequi_one.webflow.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Librerias JS -->
+  	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.3/i18n/angular-locale_en-us.js"></script>
+    <script src="js/libs/lodash.min.js"></script>
+    <script src="js/libs/restangular.min.js"></script>
+    <script type="text/javascript" src="js/libs/angular-recaptcha.min.js"></script>
+
+</head>
+<body ng-app="App">
+
+    <div id="content">
+        <div ng-include="getTemplate('/header.html')"></div>
+        <section class="login-section" ng-controller="loginController as loginControl">
+            <div class="login-wrap">
+                <h1>{{i18n.views.authLogin.title}}</h1>
+                <p>{{i18n.views.authLogin.phraseOne}}</p>
+                <div class="login-form-wrap">
+                    <form method="POST" action="loginServiceAuthentication" autocomplete="off" name="loginControl.formLogin" novalidate>
+                        <div class="input-wrap input-country">
+                            <div class="wrap-select-country">
+                                <select-country selected-country="loginControl.selectCountry" options="loginControl.selectOption" on-select-country="loginControl.onSelectCountry(option)"></select-country>
+                            </div>
+                            <input class="form-input-text" type="tel" id="j_username" name="j_username" placeholder="{{i18n.views.authLogin.inputUser}}"
+                            ng-required="true"
+                            ng-minlength="configCountry.inputs.phoneNumber.minlength"
+                            ng-pattern="configCountry.inputs.phoneNumber.regEx"
+                            ng-model="loginControl.user"
+                            ui-us-phone-number
+                            masklocalstring = "{{configCountry.inputs.phoneNumber.maskString}}"
+                            >
+                        </div>
+                        <div class="input-wrap">
+                            <input class="form-input-text"  type="password" id="j_password" name="j_password" placeholder="{{i18n.views.authLogin.inputPass}}" ng-required="true"
+                            ng-maxlength="configCountry.inputs.password.minlength"
+                            ng-minlength="configCountry.inputs.password.minlength"
+                            ng-pattern="configCountry.inputs.password.regEx"
+                            ng-model="loginControl.password"
+                            >
+                        </div>
+                        <div
+                            ng-if="loginControl.showCaptcha"
+                            class="captcha-wp"
+                            vc-recaptcha
+                            ng-model="loginControl.myRecaptchaResponse"
+                            key="'6LdjCwshAAAAALml0fdmI80RRivlxm74orS_2V4i'"
+                            lang="es"
+                            type="'image'"
+                        ></div>
+                        <div class="g-recaptcha"
+              data-sitekey="6LdjCwshAAAAALml0fdmI80RRivlxm74orS_2V4i"></div>
+                        <div class="btn-wrap">
+                            <input class="form-btn-submit" type="submit" value="{{i18n.views.authLogin.submit}}" ng-click="loginControl.passEncrypt()"
+                            ng-disabled="!loginControl.formLogin.$valid">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div ng-include="getTemplate('/footer.html')"></div>
+    </div>
+</body>
+  <!-- Encriptar -->
+  <script src="js/libs/crypto/aes.js"></script>
+  <script src="js/libs/crypto/pbkdf2.js"></script>
+  <script src="js/libs/crypto/AesUtil.js"></script>
+  <script src="js/libs/crypto/md5.js"></script>
+  <script src="js/libs/angular-no-captcha.js"></script>
+  <script src="js/libs/angular-input-masks-standalone.min.js"></script>
+  <script src="js/libs/string-mask.js"></script>
+  <!-- App -->
+  <script src="js/scripts.js"></script>
 </html>
