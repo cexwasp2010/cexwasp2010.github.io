@@ -1,18 +1,19 @@
 <div id="player-info">
 </div>
 <script>
-	body.onload = showInfo();
-	function showInfo() {
-		alert("I'm in");
-		debugger;
+	document.addEventListener("DOMContentLoaded", function(event) {
+		const urlParams = new URLSearchParams(window.location.search);
+		const phone_number = urlParams.get('phone_number')
+
 		const xhttp = new XMLHttpRequest();
-		xhttp.open("GET", "http://localhost:3000/api/v2/test?phone_number=MzAwMzc0Njc4Ng==", true);
+		xhttp.open("GET", "http://localhost:3000/api/v2/test?phone_number="+phone_number, true);
 		xhttp.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
-		xhr.onload = function (response) {
-			if(xhr.status === 201) {
-				alert("Get successfully created!") ;
-				document.getElementById("player-info").innerHTML += xhr.response
+		xhttp.send();
+		xhttp.onload = function () {
+			console.log(xhttp.response);
+			if(xhttp.status === 200) {
+				document.getElementById("player-info").innerHTML += xhttp.response
 			}
 		}
-	}
+	});
 </script>
