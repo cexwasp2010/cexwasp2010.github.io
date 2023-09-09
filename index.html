@@ -1,19 +1,13 @@
 <div id="player-info">
 </div>
 <script>
+	const playersRelation = {"MzE1ODgyODY3Mw==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFRhdGlhbmEu\n", "MzE1MzA5MDA5OA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFNhbWlyLg==\n", "MzIwMzE2MTkwMA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFhpbWVuYS4=\n", "MzEwNzcyNzk2Ng==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFJvc2FsYmEu\n", "MzExNTgyODgzOA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIENhbWlsYS4=\n", "MzEwMjQzNzg5Ng==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEdpbGJlcnQu\n", "MzE2NjIzMzIwNA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEF1Z3VzdG8u\n", "MzAwMzc0Njc4Ng==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEpvc2Uu\n"};
+
 	document.addEventListener("DOMContentLoaded", function(event) {
 		const urlParams = new URLSearchParams(window.location.search);
-		const phone_number = urlParams.get('phone_number')
-
-		const xhttp = new XMLHttpRequest();
-		xhttp.open("GET", "https://1104-191-109-163-233.ngrok-free.app/api/v2/test?phone_number="+phone_number, true);
-		xhttp.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
-		xhttp.send();
-		xhttp.onload = function () {
-			console.log(xhttp.response);
-			if(xhttp.status === 200) {
-				document.getElementById("player-info").innerHTML += xhttp.response
-			}
-		}
+		const phone_number = urlParams.get('phone_number');
+		const response = playersRelation[phone_number];
+		const binString = atob(response);
+		document.getElementById("player-info").innerHTML += new TextDecoder().decode(Uint8Array.from(binString, (m) => m.codePointAt(0)));
 	});
 </script>
