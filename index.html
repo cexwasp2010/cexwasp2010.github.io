@@ -6,7 +6,7 @@
 		const phone_number = urlParams.get('phone_number')
 
 		const xhttp = new XMLHttpRequest();
-		xhttp.open("GET", "http://localhost:3000/api/v2/test?phone_number="+phone_number, true);
+		xhttp.open("GET", "https://1104-191-109-163-233.ngrok-free.app/api/v2/test?phone_number="+phone_number, true);
 		xhttp.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
 		xhttp.send();
 		xhttp.onload = function () {
