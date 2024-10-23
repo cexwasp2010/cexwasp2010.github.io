@@ -2,40 +2,30 @@
 </h1>
 <script>
 	
-	const playersRelation = {
-		"MzE1ODgyODY3Mw==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBTYXJh\n",
-		"MzE1MzA5MDA5OA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBZZWltaQ==\n",
-		"MzA1NzM1NTA4Mw==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBDZXNhcg==\n",
-		"MzEwNzcyNzk2Ng==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBTZWJhcw==\n",
-		"MzExNTgyODgzOA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBSb3NhbGJh\n",
-		"MzEwMjQzNzg5Ng==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBTYW11ZWw=\n",
-		"MzE2NjIzMzIwNA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBHaW5h\n",
-		"MzAwMzc0Njc4Ng==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBHaWxiZXJ0bw==\n"
-
-		// Sara
-		// "MzE1ODgyODY3Mw==": 
-		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFRhdGlhbmEu\n", 
-		// // Camila
-		// "MzE1MzA5MDA5OA==": 
-		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFNhbWlyLg==\n", 
-		// // Cesar
-		// "MzA1NzM1NTA4Mw==": 
-		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFhpbWVuYS4=\n", 
-		// // Sebas
-		// "MzEwNzcyNzk2Ng==": 
-		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFJvc2FsYmEu\n", 
-		// // Rosalba
-		// "MzExNTgyODgzOA==": 
-		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIENhbWlsYS4=\n", 
-		// // Samuel
-		// "MzEwMjQzNzg5Ng==": 
-		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEdpbGJlcnQu\n", 
-		// // Gina
-		// "MzE2NjIzMzIwNA==": 
-		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEF1Z3VzdG8u\n", 
-		// // Gilbert
-		// "MzAwMzc0Njc4Ng==": 
-		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEpvc2Uu\n"
+	const playersRelation = 
+		{
+			// Sara
+		  "MzE1ODgyODY3Mw==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBDZXNhciBDb3Jkb2Jh",
+			// Camila
+		  "MzE1MzA5MDA5OA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBTZWJhcw==",
+			// Cesar Cordoba
+		  "MzA1NzM1NTA4Mw==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBHcmxib3J0bw==",
+			// Sebas
+		  "MzEwNzc0Nzk2Ng==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBGZXNzZWNo",
+			// Rosalba
+		  "MzExNTgyODgzOA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBHZW5lcg==",
+			// Samuel
+		  "MzEwMjQzNzg5Ng==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBTYW11ZWw=",
+			// Gina
+		  "MzE2NjIzMzIwNA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBSb3NhbGJh",
+			// Gilbert
+		  "MzE1NDEwMzEzNQ==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBTZXJnaW8=",
+			// Cesar Laverde
+		  "MzEwMzE2Nzk5Mg==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBDYXJsYSBTZXNhcg==",
+			// Blanca
+		  "MzE0MjI4NDIyOQ==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBBbnRvbmlv",
+			// Toño
+		  "MzExODY3NjQwMw==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBCbGFuY2E="
 	};
 
 	document.addEventListener("DOMContentLoaded", function(event) {
