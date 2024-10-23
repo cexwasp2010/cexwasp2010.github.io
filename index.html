@@ -46,7 +46,7 @@
 		params.append('ContentVariables', JSON.stringify({ "1": "Tu amigo secreto" }));
 		
 		fetch(url, {
-		  method: 'POST', // Specify the HTTP method (e.g., GET, POST, PUT, etc.)
+		  method: 'POST',
 		  headers: {
 		    'Authorization': 'Basic ' + `${accountSid}:${authToken}`,
 		    'Content-Type': 'application/x-www-form-urlencoded'
