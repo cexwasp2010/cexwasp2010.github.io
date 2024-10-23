@@ -3,30 +3,39 @@
 <script>
 	
 	const playersRelation = {
+		"MzE1ODgyODY3Mw==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBTYXJh",
+		"MzE1MzA5MDA5OA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBZZWltaQ==",
+		"MzA1NzM1NTA4Mw==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBDZXNhcg==",
+		"MzEwNzcyNzk2Ng==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBTZWJhcw==",
+		"MzExNTgyODgzOA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBSb3NhbGJh",
+		"MzEwMjQzNzg5Ng==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBTYW11ZWw=",
+		"MzE2NjIzMzIwNA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBHaW5h",
+		"MzAwMzc0Njc4Ng==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjdWVudGEgcmVncmVzaXZhIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBhbWlnbyBzZWNyZXRvOiBHaWxiZXJ0bw=="
+
 		// Sara
-		"MzE1ODgyODY3Mw==": 
-			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFRhdGlhbmEu\n", 
-		// Camila
-		"MzE1MzA5MDA5OA==": 
-			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFNhbWlyLg==\n", 
-		// Cesar
-		"MzA1NzM1NTA4Mw==": 
-			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFhpbWVuYS4=\n", 
-		// Sebas
-		"MzEwNzcyNzk2Ng==": 
-			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFJvc2FsYmEu\n", 
-		// Rosalba
-		"MzExNTgyODgzOA==": 
-			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIENhbWlsYS4=\n", 
-		// Samuel
-		"MzEwMjQzNzg5Ng==": 
-			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEdpbGJlcnQu\n", 
-		// Gina
-		"MzE2NjIzMzIwNA==": 
-			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEF1Z3VzdG8u\n", 
-		// Gilbert
-		"MzAwMzc0Njc4Ng==": 
-			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEpvc2Uu\n"
+		// "MzE1ODgyODY3Mw==": 
+		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFRhdGlhbmEu\n", 
+		// // Camila
+		// "MzE1MzA5MDA5OA==": 
+		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFNhbWlyLg==\n", 
+		// // Cesar
+		// "MzA1NzM1NTA4Mw==": 
+		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFhpbWVuYS4=\n", 
+		// // Sebas
+		// "MzEwNzcyNzk2Ng==": 
+		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFJvc2FsYmEu\n", 
+		// // Rosalba
+		// "MzExNTgyODgzOA==": 
+		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIENhbWlsYS4=\n", 
+		// // Samuel
+		// "MzEwMjQzNzg5Ng==": 
+		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEdpbGJlcnQu\n", 
+		// // Gina
+		// "MzE2NjIzMzIwNA==": 
+		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEF1Z3VzdG8u\n", 
+		// // Gilbert
+		// "MzAwMzc0Njc4Ng==": 
+		// 	"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEpvc2Uu\n"
 	};
 
 	document.addEventListener("DOMContentLoaded", function(event) {
@@ -35,28 +44,6 @@
 		const response = playersRelation[phone_number];
 		const binString = atob(response);
 		const text = new TextDecoder().decode(Uint8Array.from(binString, (m) => m.codePointAt(0)));
-		const accountSid = atob('QUNiZDYxOTRiNDU1NDk1ZDdkMjg5MjAxYjAzM2NmM2VmOA==');
-		const authToken = atob('MzY4NzRmYzFlMWY0ODQzZGYwYmYxNDExYTE4MTMzMGM=');
-
-		const url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`
-		const params = new URLSearchParams();
-		
-		params.append('To', `whatsapp:+57${phone_number}`);
-		params.append('From', '+16788258176');
-		params.append('Body', '');
-		
-		fetch(url, {
-		  method: 'POST',
-		  headers: {
-		    'Authorization': 'Basic ' + `${accountSid}:${authToken}`,
-		    'Content-Type': 'application/x-www-form-urlencoded'
-		  },
-		  body: params
-		})
-		  .then(response => response.json()) // Parse the JSON response
-		  .then(data => console.log(data))   // Handle the response data
-		  .catch(error => console.error('Error:', error)); // Handle errors
-
 		document.getElementById("player-info").innerHTML += text
 	});
 </script>
