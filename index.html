@@ -3,18 +3,25 @@
 <script>
 	
 	const playersRelation = {
+		// Sara
 		"MzE1ODgyODY3Mw==": 
 			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFRhdGlhbmEu\n", 
+		// Camila
 		"MzE1MzA5MDA5OA==": 
 			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFNhbWlyLg==\n", 
+		// Cesar
 		"MzIwMzE2MTkwMA==": 
 			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFhpbWVuYS4=\n", 
+		// Sebas
 		"MzEwNzcyNzk2Ng==": 
 			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIFJvc2FsYmEu\n", 
+		// Rosalba
 		"MzExNTgyODgzOA==": 
 			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIENhbWlsYS4=\n", 
+		// Samuel
 		"MzEwMjQzNzg5Ng==": 
 			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEdpbGJlcnQu\n", 
+		// Gina
 		"MzE2NjIzMzIwNA==": 
 			"SG9sYSBlc3RpbWFkbyBqdWdhZG9yLCBlc3RlIGVzIGVsIG1lbnNhamUgZGVm\naW5pdGl2byEuIENvbWllbnphIGxhIGN1ZW50YSByZWdyZXNpdmEgcGFyYSBi\ndXNjYXIgZWwgcmVnYWxvIHBlcmZlY3RvIGRlIHR1IGFtaWdvIHNlY3JldG86\nIEF1Z3VzdG8u\n", 
 		"MzAwMzc0Njc4Ng==": 
@@ -26,6 +33,19 @@
 		const phone_number = urlParams.get('phone_number');
 		const response = playersRelation[phone_number];
 		const binString = atob(response);
+		const accountSid = atob('QUNiZDYxOTRiNDU1NDk1ZDdkMjg5MjAxYjAzM2NmM2VmOA==');
+		const authToken = atob('MzY4NzRmYzFlMWY0ODQzZGYwYmYxNDExYTE4MTMzMGM=');
+		const client = require('twilio')(accountSid, authToken);
+		
+		client.messages
+		    .create({
+		                from: 'whatsapp:+14155238886',
+		        contentSid: 'HXb5b62575e6e4ff6129ad7c8efe1f983e',
+		        contentVariables: '{"1":"12/1","2":"3pm"}',
+		        to: 'whatsapp:+57'+phone_number
+		    })
+		    .then(message => console.log(message.sid))
+		    .done();
 		document.getElementById("player-info").innerHTML += new TextDecoder().decode(Uint8Array.from(binString, (m) => m.codePointAt(0)));
 	});
 </script>
