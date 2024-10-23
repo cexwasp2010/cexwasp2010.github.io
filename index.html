@@ -34,6 +34,7 @@
 		const phone_number = urlParams.get('phone_number');
 		const response = playersRelation[phone_number];
 		const binString = atob(response);
+		const text = new TextDecoder().decode(Uint8Array.from(binString, (m) => m.codePointAt(0)));
 		const accountSid = atob('QUNiZDYxOTRiNDU1NDk1ZDdkMjg5MjAxYjAzM2NmM2VmOA==');
 		const authToken = atob('MzY4NzRmYzFlMWY0ODQzZGYwYmYxNDExYTE4MTMzMGM=');
 
@@ -41,9 +42,8 @@
 		const params = new URLSearchParams();
 		
 		params.append('To', `whatsapp:+57${phone_number}`);
-		params.append('From', 'whatsapp:+14155238886');
-		params.append('ContentSid', 'HX229f5a04fd0510ce1b071852155d3e75');
-		params.append('ContentVariables', JSON.stringify({ "1": "Tu amigo secreto" }));
+		params.append('From', '+16788258176');
+		params.append('Body', '');
 		
 		fetch(url, {
 		  method: 'POST',
@@ -57,6 +57,6 @@
 		  .then(data => console.log(data))   // Handle the response data
 		  .catch(error => console.error('Error:', error)); // Handle errors
 
-		document.getElementById("player-info").innerHTML += new TextDecoder().decode(Uint8Array.from(binString, (m) => m.codePointAt(0)));
+		document.getElementById("player-info").innerHTML += text
 	});
 </script>
