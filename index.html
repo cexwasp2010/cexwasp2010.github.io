@@ -1,38 +1,50 @@
 <h1 id="player-info">
 </h1>
 <script>
-	
+	const phoneNames = {
+  "MzE1ODgyODY3Mw==": "Sara",
+  "MzE1MzA5MDA5OA==": "Yeimi",
+  "MzA1NzM1NTA4Mw==": "Cesar Cordoba",
+  "MzEwNzc0Nzk2Ng==": "Samir",
+  "MzExNTgyODgzOA==": "Rosalba",
+  "MzEwMjQzNzg5Ng==": "Samuel",
+  "MzE2NjIzMzIwNA==": "Gina",
+  "MzE1NDEwMzEzNQ==": "Gilberto",
+  "MzEwMzE2Nzk5Mg==": "Cesar Laverde",
+  "MzE0MjI4NDIyOQ==": "Blanca",
+  "MzExODY3NjQwMw==": "Toño"
+};
 	const playersRelation = 
 		{
-			// Sara
-		  "MzE1ODgyODY3Mw==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBDZXNhciBDb3Jkb2Jh",
-			// Camila
-		  "MzE1MzA5MDA5OA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBTZWJhcw==",
-			// Cesar Cordoba
-		  "MzA1NzM1NTA4Mw==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBHcmxib3J0bw==",
-			// Sebas
-		  "MzEwNzc0Nzk2Ng==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBGZXNzZWNo",
-			// Rosalba
-		  "MzExNTgyODgzOA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBHZW5lcg==",
-			// Samuel
-		  "MzEwMjQzNzg5Ng==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBTYW11ZWw=",
-			// Gina
-		  "MzE2NjIzMzIwNA==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBSb3NhbGJh",
-			// Gilbert
-		  "MzE1NDEwMzEzNQ==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBTZXJnaW8=",
-			// Cesar Laverde
-		  "MzEwMzE2Nzk5Mg==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBDYXJsYSBTZXNhcg==",
-			// Blanca
-		  "MzE0MjI4NDIyOQ==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBBbnRvbmlv",
-			// Toño
-		  "MzExODY3NjQwMw==": "SG9sYSBlc3RpbWFkbyBqdWdhZG9yLiBDb21pZW56YSBsYSBjZW50YSByZWdyZXNpdmEgIHBhcmEgYnVzY2FyIGVsIHJlZ2FsbyBwZXJmZWN0byBkZSB0dSBBbWlnbyBzZWNyZXRvOiBCbGFuY2E="
+		"MzA1NzM1NTA4Mw==": 
+"Hola estimado jugador. Comienza la cuenta regresiva para buscar el regalo perfecto de tu amigo secreto: Rosalba"
+"MzE0MjI4NDIyOQ==": 
+"Hola estimado jugador. Comienza la cuenta regresiva para buscar el regalo perfecto de tu amigo secreto: Gina"
+"MzE1MzA5MDA5OA==": 
+"Hola estimado jugador. Comienza la cuenta regresiva para buscar el regalo perfecto de tu amigo secreto: Cesar Cordoba"
+"MzE1NDEwMzEzNQ==": 
+"Hola estimado jugador. Comienza la cuenta regresiva para buscar el regalo perfecto de tu amigo secreto: Samir"
+"MzE1ODgyODY3Mw==": 
+"Hola estimado jugador. Comienza la cuenta regresiva para buscar el regalo perfecto de tu amigo secreto: Samuel"
+"MzE2NjIzMzIwNA==": 
+"Hola estimado jugador. Comienza la cuenta regresiva para buscar el regalo perfecto de tu amigo secreto: Cesar Laverde"
+"MzEwMjQzNzg5Ng==": 
+"Hola estimado jugador. Comienza la cuenta regresiva para buscar el regalo perfecto de tu amigo secreto: Toño"
+"MzEwMzE2Nzk5Mg==": 
+"Hola estimado jugador. Comienza la cuenta regresiva para buscar el regalo perfecto de tu amigo secreto: Sara"
+"MzEwNzc0Nzk2Ng==": 
+"Hola estimado jugador. Comienza la cuenta regresiva para buscar el regalo perfecto de tu amigo secreto: Gilberto"
+"MzExNTgyODgzOA==": 
+"Hola estimado jugador. Comienza la cuenta regresiva para buscar el regalo perfecto de tu amigo secreto: Yeimi"
+"MzExODY3NjQwMw==":
+			"Hola estimado jugador. Comienza la cuenta regresiva para buscar el regalo perfecto de tu amigo secreto: Blanca"
 	};
 
 	document.addEventListener("DOMContentLoaded", function(event) {
 		const urlParams = new URLSearchParams(window.location.search);
 		const phone_number = urlParams.get('phone_number');
 		const response = playersRelation[phone_number];
-		const binString = atob(response);
+		const binString = response;
 		const text = new TextDecoder().decode(Uint8Array.from(binString, (m) => m.codePointAt(0)));
 		document.getElementById("player-info").innerHTML += text
 	});
